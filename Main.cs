@@ -32,14 +32,15 @@ namespace CVRSPinBot
         {
             if (Input.GetKey(KeyCode.LeftControl) && Input.GetKeyDown(KeyCode.P))
             {
-                if (State2 == 1)
+                switch (State2)
                 {
-                    State2 = 0;
-                    return;
-                }
-                if (State2 == 0)
-                {
-                    State2 = 1;
+                    case 1:
+                      State2 = 0;
+                      return;
+                    case 0:
+                     State2 = 1;
+                    default:
+                     break;
                 }
                 //  MelonCoroutines.Start(joe());
             }
